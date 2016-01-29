@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Créer l&#39;API REST | Création d&#39;une application mobile</title>
+        <title>Création de l&#39;API REST | Création d&#39;une application mobile</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="3.1"
-        data-chapter-title="Créer l&#39;API REST"
+        data-chapter-title="Création de l&#39;API REST"
         data-filepath="backend/restapi.md"
         data-basepath=".."
-        data-revision="Fri Jan 29 2016 09:00:08 GMT-0400 (AST)"
+        data-revision="Fri Jan 29 2016 10:27:40 GMT-0400 (AST)"
         data-innerlanguage="">
     
 
@@ -152,7 +152,7 @@
                         
                             <b>2.3.</b>
                         
-                        Créer l&#39;application
+                        Création de l&#39;application
                     </a>
             
             
@@ -167,7 +167,7 @@
                         
                             <b>2.4.</b>
                         
-                        Déployer l&#39;application
+                        Déploiement de l&#39;application
                     </a>
             
             
@@ -203,7 +203,7 @@
                         
                             <b>3.1.</b>
                         
-                        Créer l&#39;API REST
+                        Création de l&#39;API REST
                     </a>
             
             
@@ -218,7 +218,7 @@
                         
                             <b>3.2.</b>
                         
-                        Créer la ou les base(s) de données
+                        Création de la base de données
                     </a>
             
             
@@ -292,17 +292,17 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="cr&#xE9;er-lapi-rest">Cr&#xE9;er l&apos;API REST</h1>
+                        <h1 id="cr&#xE9;ation-de-lapi-rest">Cr&#xE9;ation de l&apos;API REST</h1>
 <h2 id="installer-strongloop">Installer Strongloop</h2>
-<p>Installer strongloop:</p>
+<p>Installez strongloop:</p>
 <pre><code>$ npm install strongloop -g
-</code></pre><p>Cr&#xE9;er l&apos;application:</p>
+</code></pre><p>Cr&#xE9;ez l&apos;application:</p>
 <pre><code>$ slc loopback
 </code></pre><h2 id="configurer-le-login-facebook">Configurer le login facebook</h2>
 <p>Pour permettre &#xE0; vos utilisateurs de se logguer avec des comptes tiers, il faut installer 2 modules suppl&#xE9;mentaires:</p>
 <pre><code>$ npm install loopback-component-passport --save
 $ npm install passport-facebook --save
-</code></pre><p>Ouvrez le fichier server/model-config.json, ajouter ./node_modules/loopback-component-passport/lib/models &#xE0; la liste des source puis ajoutez les modules UserCredential et UserIdentity:</p>
+</code></pre><p>Ouvrez le fichier server/model-config.json, ajoutez ./node_modules/loopback-component-passport/lib/models &#xE0; la liste des source puis ajoutez les modules UserCredential et UserIdentity:</p>
 <pre><code>&quot;UserCredential&quot;: {
   &quot;dataSource&quot;: &quot;db&quot;,
   &quot;public&quot;: true
@@ -311,8 +311,8 @@ $ npm install passport-facebook --save
   &quot;dataSource&quot;: &quot;db&quot;,
   &quot;public&quot;: true
 }
-</code></pre><p>Configurer votre serveur pour permettre vos logins Facebook.</p>
-<p>Cr&#xE9;er le script boot facebook-oauth.js dans server/boot:</p>
+</code></pre><p>Ensuite il faut configurer votre serveur pour permettre vos logins Facebook.</p>
+<p>Cr&#xE9;ez le script boot facebook-oauth.js dans server/boot:</p>
 <pre><code>// Make sure to also put this in `server/server.js`
 var PassportConfigurator =
   require(&apos;loopback-component-passport&apos;).PassportConfigurator;
@@ -328,10 +328,10 @@ passportConfigurator.setupModels({
 });
 passportConfigurator.configureProvider(&apos;facebook-login&apos;,
   require(&apos;../providers.json&apos;)[&apos;facebook-login&apos;]);
-</code></pre><p>Ajouter la ligne suivante dans server/server.js:</p>
+</code></pre><p>Ajoutez la ligne suivante dans server/server.js:</p>
 <pre><code>var PassportConfigurator =
   require(&apos;loopback-component-passport&apos;).PassportConfigurator;
-</code></pre><p>Cr&#xE9;er le fichier providers.json sous server:</p>
+</code></pre><p>Cr&#xE9;ez le fichier providers.json sous server:</p>
 <pre><code>{
   &quot;facebook-login&quot;: {
     &quot;provider&quot;: &quot;facebook&quot;,
@@ -347,7 +347,7 @@ passportConfigurator.configureProvider(&apos;facebook-login&apos;,
 }
 </code></pre><p>NB: Les id propos&#xE9;es sont pour une application de test. Il vous faudra cr&#xE9;er votre propre application facebook.</p>
 <h2 id="obtenir-lutilisateur-connect&#xE9;">Obtenir l&apos;utilisateur connect&#xE9;</h2>
-<p>Pour tracker l&apos;utilisateur connect&#xE9;, vous aurez besoin de stocker les sessions et de parser les cookies.</p>
+<p>Pour traquer l&apos;utilisateur connect&#xE9;, vous aurez besoin de stocker les sessions et de parser les cookies.</p>
 <pre><code>$ npm install express-session --save
 $ npm install cookie-parser --save
 </code></pre><p>Pluguez les middleware install&#xE9;s &#xE0; votre API REST en ajoutant le code suivant dans le fichier server/middleware.json.</p>
@@ -363,32 +363,28 @@ $ npm install cookie-parser --save
     }
   }
 }
-</code></pre><p>Ajouter le middleware &#x2018;auth&#x2019; pour transformer /me en l&apos;ID de l&apos;utilisateur connect&#xE9;. Pour cela ajouter le code suivant au script boot server/boot/authentication.js.</p>
+</code></pre><p>Ajoutez le middleware &#x2018;auth&#x2019; pour transformer /me en l&apos;ID de l&apos;utilisateur connect&#xE9;. Pour cela, ajoutez le code suivant au script boot server/boot/authentication.js.</p>
 <pre><code>server.middleware(&apos;auth&apos;, loopback.token({
   model: server.models.accessToken,
   currentUserLiteral: &apos;me&apos;
 }));
 </code></pre><h2 id="configurer-vos-mod&#xE8;les">Configurer vos mod&#xE8;les</h2>
-<p>Cr&#xE9;er une nouvelle source de donn&#xE9;es qui va &#xEA;tre connect&#xE9;e &#xE0; votre base de donn&#xE9;es. </p>
+<p>Cr&#xE9;ez une nouvelle source de donn&#xE9;es qui va &#xEA;tre connect&#xE9;e &#xE0; votre base de donn&#xE9;es. </p>
 <pre><code>$ slc loopback:datasource [ds_name]
-</code></pre><p>Choisissez le connector MySql.</p>
-<p>Cr&#xE9;er un nouveau mod&#xE8;le et suivez les indications:</p>
+</code></pre><p>Choisissez le connector MySql.<br>Cr&#xE9;ez un nouveau mod&#xE8;le et suivez les indications:</p>
 <pre><code>$ slc loopback:model &lt;model_name&gt;
-</code></pre><p>Vous serez amen&#xE9; &#xE0; pr&#xE9;ciser:</p>
+</code></pre><p>Vous serez amen&#xE9; &#xE0; choisir:</p>
 <ul>
 <li>La source de donn&#xE9;es &#xE0; laquelle votre mod&#xE8;le doit &#xEA;tre connect&#xE9;. Par d&#xE9;faut, il n&apos;y en a qu&apos;une (la in-memory nomm&#xE9;e &quot;db&quot;). Si vous avez cr&#xE9;&#xE9; une autre source de donn&#xE9;es comme indiqu&#xE9; plus haut, elle appara&#xEE;tra &#xE9;galement.</li>
 <li>Le mod&#xE8;le de la classe de base, utilisez PersistedModel.</li>
-<li>D&apos;exposez votre mod&#xE8;le &#xE0; l&apos;API REST - choisissez oui. </li>
+<li>D&apos;exposer ou non votre mod&#xE8;le &#xE0; l&apos;API REST - choisissez oui. </li>
 <li>Un nom &#xE0; utiliser au pluriel.</li>
 <li>Les propri&#xE9;t&#xE9;s de votre mod&#xE8;le.</li>
 </ul>
-<p>Un nouveau fichier est cr&#xE9;&#xE9; dans common/models.</p>
-<p>Si vous voulez d&#xE9;finir une relation entre votre nouveau mod&#xE8;le et un User, vous devez d&#xE9;clarer cette ralation dans le fichier server/server.js.</p>
+<p>Un nouveau fichier est cr&#xE9;&#xE9; dans common/models.<br>Si vous voulez d&#xE9;finir une relation entre votre nouveau mod&#xE8;le et un User, vous devez d&#xE9;clarer cette ralation dans le fichier server/server.js.</p>
 <pre><code>var User = app.models.User;
 User.hasMany(app.models.&lt;model_name&gt;, { as: &apos;&lt;model_name&gt;s&apos;, foreignKey: &apos;userId&apos; });
-</code></pre><p>Maintenant, votre mod&#xE8;le a un champ &apos;userId&apos; qui traque &#xE0; quel utilisateur l&apos;enregistrement appartient.</p>
-<p>Il faut maintenant configurer les permissions. Un utilisateur ne doit pouvoir acc&#xE9;der qu&apos;&#xE0; ses donn&#xE9;es, un utilisateur loggu&#xE9; doit &#xEA;tre capable de cr&#xE9;er un enregistrement.</p>
-<p>Utiliser la commande slc loopback:acl pour cr&#xE9;er les permissions. </p>
+</code></pre><p>Maintenant, votre mod&#xE8;le a un champ &apos;userId&apos; qui traque &#xE0; quel utilisateur l&apos;enregistrement appartient.<br>Il faut maintenant configurer les permissions. Un utilisateur ne doit pouvoir acc&#xE9;der qu&apos;&#xE0; ses donn&#xE9;es, un utilisateur loggu&#xE9; doit &#xEA;tre capable de cr&#xE9;er un enregistrement.<br>Utilisez la commande slc loopback:acl pour cr&#xE9;er les permissions. </p>
 <pre><code>$ slc loopback:acl
 ? Select the model to apply the ACL entry to: &lt;model_name&gt;
 ? Select the ACL scope: All methods and properties
@@ -446,7 +442,7 @@ $ slc loopback:acl
         <a href="../backend/index.html" class="navigation navigation-prev " aria-label="Previous page: Backend"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../backend/deploy.html" class="navigation navigation-next " aria-label="Next page: Créer la ou les base(s) de données"><i class="fa fa-angle-right"></i></a>
+        <a href="../backend/deploy.html" class="navigation navigation-next " aria-label="Next page: Création de la base de données"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

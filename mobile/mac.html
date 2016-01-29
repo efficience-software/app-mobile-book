@@ -53,7 +53,7 @@
         data-chapter-title="Installation sous Mac"
         data-filepath="mobile/mac.md"
         data-basepath=".."
-        data-revision="Fri Jan 29 2016 09:00:08 GMT-0400 (AST)"
+        data-revision="Fri Jan 29 2016 10:27:40 GMT-0400 (AST)"
         data-innerlanguage="">
     
 
@@ -152,7 +152,7 @@
                         
                             <b>2.3.</b>
                         
-                        Créer l&#39;application
+                        Création de l&#39;application
                     </a>
             
             
@@ -167,7 +167,7 @@
                         
                             <b>2.4.</b>
                         
-                        Déployer l&#39;application
+                        Déploiement de l&#39;application
                     </a>
             
             
@@ -203,7 +203,7 @@
                         
                             <b>3.1.</b>
                         
-                        Créer l&#39;API REST
+                        Création de l&#39;API REST
                     </a>
             
             
@@ -218,7 +218,7 @@
                         
                             <b>3.2.</b>
                         
-                        Créer la ou les base(s) de données
+                        Création de la base de données
                     </a>
             
             
@@ -294,49 +294,49 @@
                     
                         <h1 id="installation-sous-mac">Installation sous Mac</h1>
 <h2 id="installer-nodejs-et-npm">Installer node.js et npm</h2>
-<p>Aller sur <a href="https://nodejs.org" target="_blank">https://nodejs.org</a> et t&#xE9;l&#xE9;charger le dernier package. Suivez les &#xE9;tapes d&apos;installation. </p>
-<p>V&#xE9;rifier que node est bien install&#xE9; en lancant la commande:</p>
+<p>Allez sur <a href="https://nodejs.org" target="_blank">https://nodejs.org</a> et t&#xE9;l&#xE9;chargez le dernier package. Suivez les &#xE9;tapes d&apos;installation. </p>
+<p>V&#xE9;rifiez que node est bien install&#xE9; en lancant la commande:</p>
 <pre><code>$ node
 &gt; console.log(&apos;Hello World&apos;);
-</code></pre><p>V&#xE9;rifier que npm est bien install&#xE9; en lancant la commande:</p>
+</code></pre><p>V&#xE9;rifiez que npm est bien install&#xE9; en lancant la commande:</p>
 <pre><code>$ npm
 </code></pre><h2 id="installer-ionic-et-cordova">Installer Ionic et cordova</h2>
 <pre><code>$ npm install -g cordova ionic
-</code></pre><p>V&#xE9;rifier l&apos;installation:</p>
+</code></pre><p>V&#xE9;rifiez l&apos;installation:</p>
 <pre><code>$ ionic
 </code></pre><h2 id="cr&#xE9;er-lapplication-mobile">Cr&#xE9;er l&apos;application mobile</h2>
-<p>Cr&#xE9;er l&apos;application:</p>
+<p>Cr&#xE9;ez l&apos;application:</p>
 <pre><code>$ ionic start &lt;appname&gt; &lt;template&gt;
 $ ionic platform add &lt;platform&gt;
-</code></pre><p>Pour lancer l&apos;application dans un navigateur web, ex&#xE9;cuter:</p>
+</code></pre><p>Pour lancer l&apos;application dans un navigateur web, ex&#xE9;cutez:</p>
 <pre><code>$ ionic serve
-</code></pre><h2 id="compiler-et-lancer-lapplication-sous-ios">Compiler et lancer l&apos;application sous ios</h2>
+</code></pre><h2 id="compilation-sous-ios">Compilation sous ios</h2>
 <h3 id="installer-xcode">Installer Xcode</h3>
-<p>T&#xE9;l&#xE9;charger et installer XCode sur le site d&apos;apple.
+<p>T&#xE9;l&#xE9;chargez et installez XCode sur le site d&apos;apple.
 <a href="https://developer.apple.com/xcode/download/" target="_blank">https://developer.apple.com/xcode/download/</a></p>
-<h3 id="compiler-pour-ios">Compiler pour ios</h3>
+<h3 id="compiler-sous-ios">Compiler sous ios</h3>
 <pre><code>$ ionic platform add ios
 $ ionic build ios
 </code></pre><h3 id="lancer-le-simulateur">Lancer le simulateur</h3>
-<p>Installer le simulateur:</p>
+<p>Installez le simulateur:</p>
 <pre><code>$ npm install -g ios-sim
-</code></pre><p>Lancer le simulateur. Utiliser l&apos;otion -l pour que les changements soient pris en compte en temps r&#xE9;el.</p>
+</code></pre><p>Lancez le simulateur. Utilisez l&apos;otion -l pour que les changements soient pris en compte en temps r&#xE9;el.</p>
 <pre><code>$ ionic emulate ios
-</code></pre><h2 id="compiler-et-lancer-lapplication-sous-android">Compiler et lancer l&apos;application sous android</h2>
+</code></pre><h2 id="compilation-sous-android">Compilation sous android</h2>
 <h3 id="installer-java">Installer java</h3>
 <p><a href="http://www.java.com/en/download/mac_download.jsp" target="_blank">http://www.java.com/en/download/mac_download.jsp</a></p>
 <h3 id="installer-le-sdk-android">Installer le sdk android</h3>
-<p>Aller en bas de la page <a href="http://developer.android.com/sdk/index.html" target="_blank">http://developer.android.com/sdk/index.html</a> et t&#xE9;l&#xE9;charger le sdk pour mac osx</p>
-<p>deziper:</p>
+<p>Allez en bas de la page <a href="http://developer.android.com/sdk/index.html" target="_blank">http://developer.android.com/sdk/index.html</a> et t&#xE9;l&#xE9;chargez le sdk pour mac osx.</p>
+<p>D&#xE9;-ziper:</p>
 <pre><code>$ unzip ~/&lt;path&gt;/android-sdk_r24.4.1-macosx.zip -d ~/Library/Developer
-</code></pre><p>Copier une r&#xE9;f&#xE9;rence de ce chemin &#xE0; votre profil:</p>
+</code></pre><p>Copiez une r&#xE9;f&#xE9;rence de ce chemin &#xE0; votre profil:</p>
 <pre><code>$ echo ~/Library/Developer/android-sdk-macosx | pbcopy
-</code></pre><p>Cr&#xE9;er ou modifier le fichier ~/.bash_profile en ajoutant le chemin copi&#xE9;:</p>
+</code></pre><p>Cr&#xE9;ez ou modifiez le fichier ~/.bash_profile en ajoutant le chemin copi&#xE9;:</p>
 <pre><code>export PATH=${PATH}:/Users/sandrinezecler/Library/Developer/android-sdk-macosx/tools:/Users/sandrinezecler/Library/Developer/android-sdk-macosx/platform-tools
-</code></pre><p>V&#xE9;rifier l&apos;installation:</p>
+</code></pre><p>V&#xE9;rifiez l&apos;installation:</p>
 <pre><code>$ android
 </code></pre><h3 id="installer-les-d&#xE9;pendances">Installer les d&#xE9;pendances</h3>
-<p>Installer les d&#xE9;pendances:</p>
+<p>Installez les d&#xE9;pendances:</p>
 <ul>
 <li>Android SDK Platform-tools</li>
 <li>Android SDK Build-tools</li>
@@ -345,16 +345,15 @@ $ ionic build ios
 <h3 id="compiler-pour-android">Compiler pour android</h3>
 <pre><code>$ ionic platform add android
 $ ionic build android
-</code></pre><h3 id="emuler-un-android">Emuler un android</h3>
+</code></pre><h3 id="emulation-dun-android">Emulation d&apos;un android</h3>
 <h4 id="installer-virtualbox">Installer VirtualBox</h4>
-<p>T&#xE9;l&#xE9;charger sur le site de VirtualBox la version pour OSX:
-<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">https://www.virtualbox.org/wiki/Downloads</a></p>
+<p>T&#xE9;l&#xE9;chargez sur le site de VirtualBox la version pour OSX:<br><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">https://www.virtualbox.org/wiki/Downloads</a></p>
 <h4 id="installer-genymotion">Installer Genymotion</h4>
-<p>Cr&#xE9;er un compte afin de pouvoir t&#xE9;l&#xE9;charger la version gratuite sur genymotion.com</p>
+<p>Cr&#xE9;ez un compte afin de pouvoir t&#xE9;l&#xE9;charger la version gratuite sur genymotion.com</p>
 <h4 id="lancer-un-appareil-virtuel">Lancer un appareil virtuel</h4>
-<p>Ajouter un nouvel appareil virtuel en s&#xE9;lectionner dans la liste &quot;Custom phone - 5.1.0 - API 22 - 768x1280&quot;</p>
-<p>D&#xE9;marrer l&apos;appareil virtuel.</p>
-<p>Ex&#xE9;cuter:</p>
+<p>Ajoutez un nouvel appareil virtuel en s&#xE9;lectionnant dans la liste &quot;Custom phone - 5.1.0 - API 22 - 768x1280&quot;.</p>
+<p>D&#xE9;marrez l&apos;appareil virtuel.</p>
+<p>Ex&#xE9;cutez:</p>
 <pre><code>$ ionic run android
 </code></pre>
                     
